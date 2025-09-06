@@ -13,7 +13,21 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+
+        //My code plan here: 
+        // 1 Create an empty array
+        // 2 Loop through the array 
+        // 3 For each spot in the array, calculate the next multiple 
+        // 4 Put the calculated multiple in the current spot in the array 
+        // 5 Return the array.
+
+        //My Code here:
+        double[] multiples = new double[length];
+        for (int i = 0; i < length; i++)
+        {
+            multiples[i] = number * (i + 1);
+        }
+        return multiples;
     }
 
     /// <summary>
@@ -25,9 +39,21 @@ public static class Arrays
     /// </summary>
     public static void RotateListRight(List<int> data, int amount)
     {
+
         // TODO Problem 2 Start
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        //My code plan here:
+        // 1. Store the last 'amount' elements in a temporary list.
+        // 2. Remove the last 'amount' elements from the original list.
+        // 3. Insert the stored elements at the beginning of the original list.
+
+        //My code here:
+        int count = data.Count;
+        List<int> temp = data.GetRange(count - amount, amount);
+        data.RemoveRange(count - amount, amount);
+        data.InsertRange(0, temp);
     }
 }
